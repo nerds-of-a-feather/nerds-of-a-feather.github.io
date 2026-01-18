@@ -20,7 +20,8 @@ pygmentsCodefencesGuessSyntax = true
 [Params]
   homeTitle = "Nerds of a Feather" # Set a different text for the header on the home page
   subtitle = ""
-
+  
+  custom_css = ["css/custom.css"]
   mainSections = ["library"]
 
   logo = "img/avatar-icon.png" # Icon in the sphere.
