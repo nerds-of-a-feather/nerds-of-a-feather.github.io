@@ -1,0 +1,28 @@
+h1, h2, h3, h4, h5 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Change settings for desktop */
+@media only screen and (min-width: 768px) {
+  h1 { 
+    font-size: 4rem; 
+  }
+  
+  /* This beats the theme's 36px rule we found earlier */
+  .post-preview .post-title { 
+    font-size: 3rem; 
+  }
+}
+
+#body h2 {
+#  font-family: "Merryweather", serif;
+#  font-optical-sizing: auto;
+#  font-weight: 300;
+#}
