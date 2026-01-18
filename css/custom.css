@@ -1,19 +1,7 @@
 /* Import fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Set up parameters for list pages, e.g. "Library" */
-.kind-section .intro-header .h1 {
-  background-color: #ffffff;
-  border-bottom: 2px solid black;
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-size: 16px;
-  font-style: normal;
-}
-
-
-/* Set up parameters for blog posts only. */
-.kind-page .intro-header {
-  background-color: #f0f0f0;
+/* Set custom colours for links */
+a, .blog-tags a, p a, .post-preview a {
+  color: #B39CD0;
 }
