@@ -21,7 +21,7 @@ pygmentsCodefencesGuessSyntax = true
   homeTitle = "Nerds of a Feather" # Set a different text for the header on the home page
   subtitle = ""
 
-  mainSections = ["post","library"]
+  mainSections = ["library"]
 
   logo = "img/avatar-icon.png" # Icon in the sphere.
   favicon = "img/favicon.ico" # Icon in the tab of the browser.
@@ -32,6 +32,9 @@ pygmentsCodefencesGuessSyntax = true
 
   useHLJS = true
   showRelatedPosts = true
+  socialShare = false
+
+  katex = false
 
 #  delayDisqus = true
 #  cusdisID = "XXX" # Get your App id from cusdis.com
@@ -86,10 +89,10 @@ pygmentsCodefencesGuessSyntax = true
 
 [[menu.main]]
     name = "Library"
-    url = "library/"
+    url = "/library/"
     weight = 1
 
 [[menu.main]]
     name = "About"
-    url = "page/about/"
+    url = "/page/about/"
     weight = 3
