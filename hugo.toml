@@ -3,6 +3,10 @@ DefaultContentLanguage = "en"
 title = "Nerds of A Feather"
 # Using theme as git submodule
 theme = "beautifulhugo"
+summaryLength = 20
+
+[markup.goldmark.renderer]
+unsafe = true
 
 pygmentsStyle = "trac"
 pygmentsUseClasses = true

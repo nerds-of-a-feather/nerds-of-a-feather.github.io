@@ -1,6 +1,5 @@
-
 h1, h2, h3, h4, h5 {
-  font-family: "Merryweather", serif;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   line-height: 1.2;
   margin-bottom: 0.5em;
@@ -22,9 +21,9 @@ h1 {
   }
 }
 
-#body h2 {
-#  font-family: "Merryweather", serif;
-#  font-optical-sizing: auto;
-#  font-weight: 300;
-#}
+body {
+  font-family: "Merryweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+}
 
