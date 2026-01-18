@@ -19,20 +19,21 @@ pygmentsCodefencesGuessSyntax = true
 
 [Params]
   homeTitle = "Beautiful Hugo Title" # Set a different text for the header on the home page
-  subtitle = "Build a beautiful and simple website in minutes"
+  subtitle = ""
+
   mainSections = ["post","posts"]
-  logo = "img/avatar-icon.png" # Expecting square dimensions
-  favicon = "img/favicon.ico"
+
+  logo = "img/avatar-icon.png" # Icon in the sphere.
+  favicon = "img/favicon.ico" # Icon in the tab of the browser.
+
   dateFormat = "January 2, 2006"
-  commit = false
   rss = true
-  comments = true
-  readingTime = true
-  wordCount = true
+  comments = false
+
   useHLJS = true
-  socialShare = true
-  delayDisqus = true
   showRelatedPosts = true
+
+#  delayDisqus = true
 #  cusdisID = "XXX" # Get your App id from cusdis.com
 #  hideAuthor = true
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
@@ -41,14 +42,12 @@ pygmentsCodefencesGuessSyntax = true
 [[Params.bigimg]]
   src = "images/test-banner.jpg"
 #  desc = "Test Banner"
+
 #[[Params.bigimg]]
 #  src = "img/sphere.jpg"
 #  desc = "Sphere"
 #  # position: see values of CSS background-position.
 #  position = "center top"
-#[[Params.bigimg]]
-#  src = "img/hexagon.jpg"
-#  desc = "Hexagon"
 
 [Params.author]
   # Set only your "username" for default hosts and full URLs otherwise (e.g., "https://MyGitLab.org/username")
@@ -87,39 +86,11 @@ pygmentsCodefencesGuessSyntax = true
   bluesky = "username"
 
 [[menu.main]]
-    name = "Blog"
+    name = "Library"
     url = ""
     weight = 1
 
 [[menu.main]]
     name = "About"
     url = "page/about/"
-    weight = 3
-
-[[menu.main]]
-    identifier = "samples"
-    name = "Samples"
-    weight = 2
-
-[[menu.main]]
-    parent = "samples"
-    name = "Big Image Sample"
-    url = "post/2017-03-07-bigimg-sample"
-    weight = 1
-
-[[menu.main]]
-    parent = "samples"
-    name = "Math Sample"
-    url = "post/2017-03-05-math-sample"
-    weight = 2
-
-[[menu.main]]
-    parent = "samples"
-    name = "Code Sample"
-    url = "post/2016-03-08-code-sample"
-    weight = 3
-
-[[menu.main]]
-    name = "Tags"
-    url = "tags"
     weight = 3
