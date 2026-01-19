@@ -1,5 +1,41 @@
 /* Import fonts from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lavishly+Yours&family=Lexend:wght@100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Force permanent dark mode */
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+/* Change header fonts */
+h1, h2, h3, h4, h5 {
+  font-family: "Merryweather", serif;
+  font-optical-sizing: auto;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+.intro-header .page-heading h1, .intro-header .tags-heading h1, .intro-header .categories-heading h1 {
+  font-family: "Lavishly Yours", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #963484; /* #e2daec; */
+}
+
+
+@media only screen and (min-width: 768px) {
+ .intro-header .page-heading h1, .intro-header .tags-heading h1, .intro-header .categories-heading h1 {
+   font-family: "Lavishly Yours", cursive;
+   font-weight: 400;
+   font-style: normal;
+   color: #963484; /* #e2daec; */
+}
+
+}
+
 
 /* Set custom colours for links */
 a, .blog-tags a, p a, .post-preview a {
