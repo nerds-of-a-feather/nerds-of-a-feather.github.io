@@ -119,7 +119,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # special amount of posts in each section page
     paginate = 20
     # date format (month and day)
-    dateFormat = "Jan 02 2026"
+    dateFormat = "Jan 02 2006"
     # amount of RSS pages
     rss = 10
 
@@ -128,7 +128,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # special amount of posts in each list page
     paginate = 20
     # date format (month and day)
-    dateFormat = "Jan 02 2026"
+    dateFormat = "Jan 02 2006"
     # amount of RSS pages
     rss = 10
 
