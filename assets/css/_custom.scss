@@ -1,0 +1,156 @@
+/* ==========================================================================
+   COLOUR PALETTE
+   Edit these variables to retheme the entire site in one place.
+   ========================================================================== */
+
+// Backgrounds
+$bg-primary:   #f0f0f0;
+$bg-secondary: #f8f9fa;
+$bg-search:    #f5f5f5;
+
+// Text
+$text-primary:  #212529;
+$text-contrast: #161209;
+$text-subtle:   #a9a9b3;
+
+// Borders
+$border-color: #eeeeee;
+$border-input: #dddddd;
+
+// Header & Logo
+$header-height: 10rem;
+$logo-height:   8rem;
+$nav-font-size: 1.1rem;
+
+/* ==========================================================================
+   1. MASTER THEME RESET (Force Light Mode)
+   ========================================================================== */
+
+:root,
+[theme="dark"],
+[theme="auto"],
+[data-theme="dark"] {
+    --background-color:           #{$bg-primary} !important;
+    --background-color-secondary: #{$bg-secondary} !important;
+    --color-default:              #{$text-primary} !important;
+    --color-contrast:             #{$text-contrast} !important;
+    --color-subtle:               #{$text-subtle} !important;
+    --search-background:          #{$bg-search} !important;
+    --search-placeholder:         #{$text-subtle} !important;
+    --border-color:               #{$border-color} !important;
+    --line-color:                 #{$border-color} !important;
+    --header-height:              #{$header-height} !important;
+}
+
+html body,
+html body[theme] {
+    background-color: $bg-primary !important;
+    color: $text-primary !important;
+}
+
+/* ==========================================================================
+   2. HEADER & LOGO
+   ========================================================================== */
+
+#header-desktop,
+#header-mobile,
+.header,
+.header-wrapper {
+    background-color: $bg-primary !important;
+    color: $text-primary !important;
+}
+
+.header {
+    height: $header-height !important;
+    padding: 1.5rem 0;
+}
+
+.header-wrapper {
+    height: 100% !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center;
+}
+
+.header-wrapper .menu {
+    flex-grow: 1;
+    display: flex !important;
+    justify-content: flex-start !important;
+    margin-left: 2.5rem !important;
+}
+
+.header-title {
+    height: $header-height !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.header-title a {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+}
+
+.header-title img.logo {
+    height: $logo-height !important;
+    max-height: $logo-height !important;
+    width: auto !important;
+}
+
+.menu-item a,
+.menu-link {
+    color: $text-primary !important;
+    font-size: $nav-font-size !important;
+}
+
+.main {
+    padding-top: 2rem !important;
+}
+
+/* ==========================================================================
+   3. UI ELEMENT FIXES (Search & Toggles)
+   ========================================================================== */
+
+.theme-switch,
+.menu-item.theme-switch {
+    display: none !important;
+}
+
+.search-input,
+#search-input-desktop,
+#search-input-mobile {
+    background-color: $bg-search !important;
+    color: $text-primary !important;
+    border: 1px solid $border-input !important;
+}
+
+.search-dropdown {
+    background-color: $bg-primary !important;
+    color: $text-primary !important;
+}
+
+/* ==========================================================================
+   4. TYPOGRAPHY & ALIGNMENT
+   ========================================================================== */
+
+.single .post-title,
+.single .post-meta,
+.archive .group-title,
+.page .single-title {
+    text-align: left !important;
+    margin-left: 0 !important;
+    width: 100%;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4 {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+.container {
+    margin-left: 2rem !important;
+    margin-right: auto !important;
+}
