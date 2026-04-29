@@ -8,4 +8,4 @@ categories: [""]
 author: ''
 ---
 
-This is some home page content. Let's see if this updates the site as expected.
+<img src="test-banner.png" class="full-width-image" alt="banner">

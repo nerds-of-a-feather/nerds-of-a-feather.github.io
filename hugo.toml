@@ -197,7 +197,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # Gravatar Email for preferred avatar in home page
       gravatarEmail = ""
       # URL of avatar shown in home page
-      avatarURL = "/images/NOAF_logo.png"
+      # avatarURL = "/images/NOAF_logo.png"
       # title shown in home page (HTML format is supported)
       title = ""
       # subtitle shown in home page (HTML format is supported)
