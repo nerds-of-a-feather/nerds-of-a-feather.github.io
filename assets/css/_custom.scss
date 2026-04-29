@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
 /* ==========================================================================
    COLOUR PALETTE
    Edit these variables to retheme the entire site in one place.
@@ -22,6 +24,19 @@ $header-height: 10rem;
 $logo-height:   8rem;
 $nav-font-size: 1.1rem;
 
+// Typography
+$font-heading: 'Lora', Georgia, serif;
+$font-body:    'Merriweather', Georgia, serif;
+
+// Font sizes
+$font-size-body:    17px;
+$font-size-h1:      2.1rem;
+$font-size-h2:      1.85rem;
+$font-size-h3:      1.6rem;
+$font-size-h4:      1.35rem;
+
+
+
 /* ==========================================================================
    1. MASTER THEME RESET (Force Light Mode)
    ========================================================================== */
@@ -40,12 +55,17 @@ $nav-font-size: 1.1rem;
     --border-color:               #{$border-color} !important;
     --line-color:                 #{$border-color} !important;
     --header-height:              #{$header-height} !important;
+    --global-font-family:         #{$font-body} !important;
+    --header-title-font-family:   #{$font-heading} !important;
+
+    --global-font-size: #{$font-size-body} !important;
 }
 
 html body,
 html body[theme] {
     background-color: $bg-primary !important;
     color: $text-primary !important;
+    font-family: $font-body !important;
 }
 
 /* ==========================================================================
@@ -133,6 +153,15 @@ html body[theme] {
    4. TYPOGRAPHY & ALIGNMENT
    ========================================================================== */
 
+// Headings use Lora
+h1, h2, h3, h4, h5, h6,
+.single-title,
+.post-title,
+.group-title,
+.archive .group-title {
+    font-family: $font-heading !important;
+}
+
 .single .post-title,
 .single .post-meta,
 .archive .group-title,
@@ -146,8 +175,40 @@ html body[theme] {
 .content h2,
 .content h3,
 .content h4 {
+    font-family: $font-heading !important;
     text-align: left !important;
     margin-left: 0 !important;
+}
+
+// Body text uses Merriweather
+.content p,
+.content li,
+.content td {
+    font-family: $font-body !important;
+}
+
+// Blockquotes — minimal left border style
+.content blockquote {
+    margin: 1.5rem 0;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    border-left: 3px solid $border-color;
+    border-radius: 0;
+    background: none;
+    font-style: italic;
+    color: darken($text-subtle, 15%);
+
+    p {
+        margin: 0;
+        font-family: $font-body !important;
+    }
+
+    cite {
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        font-style: normal;
+        color: $text-subtle;
+    }
 }
 
 .container {
