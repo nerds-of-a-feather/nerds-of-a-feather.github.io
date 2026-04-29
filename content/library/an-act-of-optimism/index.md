@@ -27,7 +27,7 @@ So I know that blogging is not the most popular form of thought-transfer these d
 
 Finally, I wanted to work on a project with my sister, Anagha, who is an artist whose style I adore. I’ve been meaning to join forces with her and work on a project together for quite a while now, and I felt that having her do the art, while I do the tickles, would be the ideal way to finally collaborate. Fortunately for me, she concurred, and so we shall have art-tickles.
 
-![](intro_graphic.png)
+![](an-act-of-optimism.gif)
 
 Ok, great! Now that I’ve gotten some justification out the way, what is this blog actually going to be about? Am I just going to pontificate about myself, my opinions, and the good old pre-AI days? Well, mostly yes. I am a scientist, so I will often write about science. However, I am also a regular human being, like all scientists (even those who think otherwise). So I will just as often write about other things that interest me: books and articles that I’m reading (both fiction and non-fiction), movies and/or TV shows I’m watching, events in my life and how they made me feel (i.e. rants), current events (although I really, really want to avoid politics as much as possible these days), life in academia, and an eclectic mix of other random topics.
 
