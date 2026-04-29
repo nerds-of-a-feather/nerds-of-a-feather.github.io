@@ -234,10 +234,6 @@ h1, h2, h3, h4, h5, h6,
     height: auto;
 }
 
-.home-subtitle {
-    font-size: 1.5rem !important;
-}
-
 // Hyperlinks
 a {
     color: $link-color !important;
@@ -245,4 +241,14 @@ a {
     &:hover {
         color: $link-color-hover !important;
     }
+}
+
+.home-subtitle {
+    font-size: 1.5rem !important;
+}
+
+.home-subtitle,
+.home-subtitle .ti-cursor {
+    font-size: 1.5rem !important;
+    font-family: $font-heading !important;
 }
