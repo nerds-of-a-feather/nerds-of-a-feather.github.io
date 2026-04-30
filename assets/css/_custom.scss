@@ -191,6 +191,12 @@ h1, h2, h3, h4, h5, h6,
     font-family: $font-body !important;
 }
 
+@media (min-width: 768px) {
+    .content p {
+        text-align: justify !important;
+    }
+}
+
 // Blockquotes — minimal left border style
 [theme=dark] .single .content blockquote,
 [theme=light] .single .content blockquote,
