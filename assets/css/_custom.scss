@@ -33,13 +33,11 @@ $font-heading: 'Lora', Georgia, serif;
 $font-body:    'Merriweather', Georgia, serif;
 
 // Font sizes
-$font-size-body:    17px;
-$font-size-h1:      2.1rem;
-$font-size-h2:      1.85rem;
-$font-size-h3:      1.6rem;
-$font-size-h4:      1.35rem;
-
-
+$font-size-body: 17px;
+$font-size-h1:   2.1rem;
+$font-size-h2:   1.85rem;
+$font-size-h3:   1.6rem;
+$font-size-h4:   1.35rem;
 
 /* ==========================================================================
    1. MASTER THEME RESET (Force Light Mode)
@@ -61,8 +59,7 @@ $font-size-h4:      1.35rem;
     --header-height:              #{$header-height} !important;
     --global-font-family:         #{$font-body} !important;
     --header-title-font-family:   #{$font-heading} !important;
-
-    --global-font-size: #{$font-size-body} !important;
+    --global-font-size:           #{$font-size-body} !important;
 }
 
 html body,
@@ -203,9 +200,14 @@ h1, h2, h3, h4, h5, h6,
 .single .content blockquote {
     margin: 1.5rem 0;
     padding: 0.25rem 0 0.25rem 1.25rem;
-    border-left: 3px solid $border-color;
-    border-radius: 0;
-    background: none !important;
+    border-left-width: 3px !important;
+    border-left-style: solid !important;
+    border-left-color: $border-color !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
     background-color: transparent !important;
     font-style: italic;
     color: darken($text-subtle, 25%);
@@ -224,11 +226,7 @@ h1, h2, h3, h4, h5, h6,
     }
 }
 
-.container {
-    margin-left: 2rem !important;
-    margin-right: auto !important;
-}
-
+// Full width images
 .full-width-image,
 .single .content img.full-width-image {
     width: 100vw !important;
@@ -243,18 +241,82 @@ h1, h2, h3, h4, h5, h6,
 // Hyperlinks
 a {
     color: $link-color !important;
- 
+
     &:hover {
         color: $link-color-hover !important;
     }
 }
 
-.home-subtitle {
-    font-size: 1.5rem !important;
+.container {
+    margin-left: 2rem !important;
+    margin-right: auto !important;
 }
 
+// Subtitle
 .home-subtitle,
 .home-subtitle .ti-cursor {
     font-size: 1.5rem !important;
     font-family: $font-heading !important;
+}
+
+/* ==========================================================================
+   5. HOMEPAGE NAV CARDS
+   ========================================================================== */
+
+.nav-cards {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.nav-card {
+    flex: 1;
+    display: block;
+    padding: 1.5rem;
+    border: 1px solid $border-color;
+    border-radius: 0.5rem;
+    background-color: $bg-secondary;
+    text-decoration: none !important;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:hover {
+        border-color: $link-color;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        color: inherit !important;
+    }
+}
+
+.nav-card-label {
+    font-family: $font-body;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $link-color;
+    margin-bottom: 0.5rem;
+}
+
+.nav-card-title {
+    font-family: $font-heading;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 0.25rem;
+}
+
+.nav-card-meta {
+    font-size: 0.8rem;
+    color: $text-subtle;
+    margin-bottom: 0.5rem;
+}
+
+.nav-card-desc {
+    font-family: $font-body;
+    font-size: 0.9rem;
+    color: $text-subtle;
+    line-height: 1.6;
 }
