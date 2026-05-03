@@ -41,17 +41,25 @@
 
         <script>
         (function() {
-            fetch('/index.json')
-                .then(r => r.json())
-                .then(data => {
-                    const posts = data.filter(p => p.uri && p.uri.startsWith('/library/'));
-                    if (!posts.length) return;
-                    document.getElementById('random-post-card').addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const post = posts[Math.floor(Math.random() * posts.length)];
-                        window.location.href = post.uri;
-                    });
-                });
+fetch('/index.json')
+    .then(r => r.json())
+    .then(data => {
+        // Deduplicate by URI
+        const seen = new Set();
+        const posts = data.filter(p => {
+            if (p.uri && p.uri.startsWith('/library/') && !seen.has(p.uri)) {
+                seen.add(p.uri);
+                return true;
+            }
+            return false;
+        });
+        if (!posts.length) return;
+        document.getElementById('random-post-card').addEventListener('click', function(e) {
+            e.preventDefault();
+            const post = posts[Math.floor(Math.random() * posts.length)];
+            window.location.href = post.uri;
+        });
+    });
         })();
         </script>
 
