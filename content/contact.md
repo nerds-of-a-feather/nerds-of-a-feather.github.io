@@ -3,6 +3,7 @@ date = '2026-01-06T10:32:08-08:00'
 draft = false
 title = 'Contact'
 contact = true
+layout = 'contact'
 hide_title = true
 +++
 

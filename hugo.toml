@@ -27,7 +27,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 [services]
   [services.googleAnalytics]
-    id = ''
+    id = 'G-NQDNJNYFFC'
 
 contactFormAction = "https://formspree.io/f/xkoyazln"
 
