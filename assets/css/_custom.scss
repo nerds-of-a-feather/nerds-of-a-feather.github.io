@@ -248,7 +248,7 @@ a {
 }
 
 .container {
-    margin-left: 2rem !important;
+    margin-left: 0.5rem !important;
     margin-right: auto !important;
 }
 
@@ -325,12 +325,6 @@ a {
    6. CONTACT US FORM
    ========================================================================== */
 
-/* .contact-form {
-    padding-top: 170px;
-    margin-top: 30px;
-}
-*/
-
 .form-style {
     width: 100%;
 
@@ -379,13 +373,18 @@ a {
                 text-decoration: none;
                 width: 100%;
             }
-	   input[type='text'],
-	   input[type='email'],
-	   input[type='message'],
-		textarea {
-    		background-color: white;
-    		color: var(--color-text);
-	    }
+        }
+    }
+}
+
+/* ==========================================================================
+   7. POST LAYOUT
+   ========================================================================== */
+
+.single, .page {
+    .main {
+        .container {
+            max-width: 90%;
         }
     }
 }
