@@ -29,7 +29,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [services.googleAnalytics]
     id = 'G-NQDNJNYFFC'
 
-contactFormAction = "https://formspree.io/f/xkoyazln"
+contactFormAction = "https://formspree.io/f/xlgzkwvb"
 
 # Pagination config
 [pagination]
