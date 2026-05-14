@@ -1,0 +1,85 @@
+{{- define "content" -}}
+    {{- $params := .Scratch.Get "params" -}}
+    {{- $profile := .Site.Params.home.profile -}}
+    {{- $posts := .Site.Params.home.posts -}}
+
+    <div class="page home"{{ if ne $posts.enable false }} data-home="posts"{{ end }}>
+
+        {{- /* Content (banner image) */ -}}
+        {{- if .Content -}}
+            <div class="single">
+                <div class="content" id="content">
+                    {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+                </div>
+            </div>
+        {{- end -}}
+
+        {{- /* Profile (subtitle) */ -}}
+        {{- if ne $profile.enable false -}}
+            {{- partial "home/profile.html" . -}}
+        {{- end -}}
+
+        {{- /* Navigation cards */ -}}
+        {{- $allPages := where .Site.RegularPages "Section" "library" -}}
+        {{- $latestPost := index ($allPages.ByDate.Reverse) 0 -}}
+        {{- with $latestPost -}}
+        <div class="nav-cards">
+            <a href="{{ .RelPermalink }}" class="nav-card">
+                <div class="nav-card-label">Latest Post</div>
+                <div class="nav-card-title">{{ .Title }}</div>
+                <div class="nav-card-meta">{{ .Date.Format "Jan 02, 2006" }}</div>
+                <div class="nav-card-desc">{{ .Description | default (.Summary | truncate 100) }}</div>
+            </a>
+            <a href="#" class="nav-card" id="random-post-card">
+                <div class="nav-card-label">Random Post</div>
+                <div class="nav-card-title">Feeling lucky?</div>
+                <div class="nav-card-meta">&nbsp;</div>
+                <div class="nav-card-desc">Click to go to a random post from the library.</div>
+            </a>
+        </div>
+        {{- end -}}
+
+        <script>
+        (function() {
+fetch('/index.json')
+    .then(r => r.json())
+    .then(data => {
+        // Deduplicate by URI
+        const seen = new Set();
+        const posts = data.filter(p => {
+            if (p.uri && p.uri.startsWith('/library/') && !seen.has(p.uri)) {
+                seen.add(p.uri);
+                return true;
+            }
+            return false;
+        });
+        if (!posts.length) return;
+        document.getElementById('random-post-card').addEventListener('click', function(e) {
+            e.preventDefault();
+            const post = posts[Math.floor(Math.random() * posts.length)];
+            window.location.href = post.uri;
+        });
+    });
+        })();
+        </script>
+
+        {{- /* Posts */ -}}
+        {{- if ne $posts.enable false | and .Site.RegularPages -}}
+            {{- $pages := where .Site.RegularPages "Type" "posts" -}}
+            {{- if .Site.Params.page.hiddenFromHomePage -}}
+                {{- $pages = where $pages "Params.hiddenfromhomepage" false -}}
+            {{- else -}}
+                {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
+            {{- end -}}
+            {{- with $posts.paginate | default .Site.Params.paginate -}}
+                {{- $pages = $.Paginate $pages . -}}
+            {{- else -}}
+                {{- $pages = .Paginate $pages -}}
+            {{- end -}}
+            {{- range $pages.Pages -}}
+                {{- .Render "summary" -}}
+            {{- end -}}
+            {{- partial "paginator.html" . -}}
+        {{- end -}}
+    </div>
+{{- end -}}

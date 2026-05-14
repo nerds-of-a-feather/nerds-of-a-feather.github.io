@@ -1,73 +1,368 @@
-baseurl = "https://nerds-of-a-feather.github.io"
-DefaultContentLanguage = "en"
-title = "Nerds of A Feather"
-# Using theme as git submodule
-theme = "beautifulhugo"
-summaryLength = 20
+baseURL = "https://nerds-of-a-feather.github.io"
 
-[markup.goldmark.renderer]
-unsafe = true
+# theme
+theme = "LoveIt"
+themesDir = "themes/"
 
-pygmentsStyle = "trac"
-pygmentsUseClasses = true
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
-#pygmentsUseClassic = true
-#pygmentOptions = "linenos=inline"
+# website title
+title = ""
 
-[Services]
-  [Services.Disqus]
-    # Shortname = "XXX"
-  [Services.googleAnalytics]
-    id = "G-NQDNJNYFFC"
+# default parameters
+defaultContentLanguage = "en"
+languageCode = "en"
+languageName = "English"
 
-[Params]
-  homeTitle = "Nerds of a Feather" # Set a different text for the header on the home page
-  subtitle = ""
-  
-  custom_css = ["css/custom.css"]
-  mainSections = ["library"]
+# copyright description used only for seo schema
+copyright = "Aalok Varma and Anagha Varma"
 
-  logo = "img/avatar-icon.png" # Icon in the sphere.
-  favicon = "img/favicon.ico" # Icon in the tab of the browser.
+# whether to use robots.txt
+enableRobotsTXT = true
+# whether to use git commit log
+enableGitInfo = true
+# whether to use emoji code
+enableEmoji = true
 
-  dateFormat = "January 2, 2006"
-  rss = false
-  comments = false
+# ignore some build errors
+ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
-  useHLJS = true
-  showRelatedPosts = true
-  socialShare = false
+[services]
+  [services.googleAnalytics]
+    id = 'G-NQDNJNYFFC'
 
-  katex = false
-  bigimg = []
+contactFormAction = "https://formspree.io/f/xkoyazln"
 
-#  delayDisqus = true
-#  cusdisID = "XXX" # Get your App id from cusdis.com
-#  hideAuthor = true
-#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+# Pagination config
+[pagination]
+  disableAliases = false
+  pagerSize = 10
+  path = "page"
 
-#[[Params.bigimg]]
-#  src = "images/test-banner.jpg"
-#  desc = "Test Banner"
-
-#[[Params.bigimg]]
-#  src = "img/sphere.jpg"
-#  desc = "Sphere"
-#  # position: see values of CSS background-position.
-#  position = "center top"
-
-[Params.author]
-  # Set only your "username" for default hosts and full URLs otherwise (e.g., "https://MyGitLab.org/username")
-  name = "Aalok Varma"
-  website = "https://varmaalok22.github.io"
-
-[[menu.main]]
+# Menu config
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = "library"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
     name = "Library"
     url = "/library/"
-    weight = 1
-
-[[menu.main]]
-    name = "About"
-    url = "/page/about/"
+    # title will be shown when you hover on this menu link
+    title = ""
+  [[menu.main]]
+    weight = 2
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+  [[menu.main]]
     weight = 3
+    identifier = "about"
+    pre = ""
+    post = ""
+    name = "About Us"
+    url = "/page/about/"  
+    title = ""
+  [[menu.main]]
+    weight = 4
+    identifier = "contact"
+    name = "Reach Out"
+    url = "/contact/"
+[params]
+  # site default theme ["auto", "light", "dark"]
+  defaultTheme = "light"
+  fingerprint = ""
+  # date format
+  dateFormat = "2006-01-02"
+  # website title for Open Graph and Twitter Cards
+  title = "Nerds of a Feather"
+  # website description for RSS, SEO, Open Graph and Twitter Cards
+  description = "Blog of science and art"
+  # website images for Open Graph and Twitter Cards
+  images = ["/NOAF_logo.png"]
+
+  # Author config
+  [params.author]
+    name = "Aalok Varma and Anagha Varma"
+    email = ""
+    link = ""
+
+  # Header config
+  [params.header]
+    # dark/light theme
+    themeChangeMode = false
+    # desktop header mode ["fixed", "normal", "auto"]
+    desktopMode = "fixed"
+    # mobile header mode ["fixed", "normal", "auto"]
+    mobileMode = "auto"
+    # Header title config
+    [params.header.title]
+      # URL of the LOGO
+      logo = "/images/NOAF_logo.png"
+      # title name
+      name = ""
+      # whether to use typeit animation for title name
+      typeit = false
+
+# Label config
+  [params.label]
+    iconHeight = 50  # default is 30
+
+  # Footer config
+  [params.footer]
+    enable = true
+    # Custom content (HTML format is supported)
+    custom = ""
+    # whether to show Hugo theme info
+    hugo = false
+    # whether to show copyright info
+    copyright = true
+    # whether to show the author
+    author = true
+    # site creation time
+    since = 2026
+
+  # Section (all posts) page config
+  [params.section]
+    # special amount of posts in each section page
+    paginate = 20
+    # date format (month and day)
+    dateFormat = "Jan 02 2006"
+    # amount of RSS pages
+    rss = 10
+
+  # List (category or tag) page config
+  [params.list]
+    # special amount of posts in each list page
+    paginate = 20
+    # date format (month and day)
+    dateFormat = "Jan 02 2006"
+    # amount of RSS pages
+    rss = 10
+
+  # App icon config
+  [params.app]
+    # optional site title override for the app when added to an iOS home screen or Android launcher
+    title = "Nerds of a Feather"
+    # whether to omit favicon resource links
+    noFavicon = false
+    # modern SVG favicon to use in place of older style .png and .ico files
+    svgFavicon = ""
+    # Android browser theme color
+    themeColor = "#ffffff"
+    # Safari mask icon color
+    iconColor = "#5bbad5"
+    # Windows v8-11 tile color
+    tileColor = "#da532c"
+
+  # Security config
+  [params.security]
+    # Content-Security-Policy meta tag for when HTTP headers cannot be set
+    # https://content-security-policy.com/examples/meta/
+    # contentSecurityPolicy = "default-src 'self'"
+
+  # Search config
+  [params.search]
+    enable = true
+    # type of search engine ["lunr", "algolia", "fuse", "pagefind"]
+    type = "fuse"
+    # max index length of the chunked content
+    contentLength = 4000
+    # placeholder of the search bar
+    placeholder = ""
+    # max number of results length
+    maxResultLength = 20
+    # snippet length of the result
+    snippetLength = 30
+    # HTML tag name of the highlight part in results
+    highlightTag = "em"
+    # whether to use the absolute URL based on the baseURL in search index
+    absoluteURL = false
+    [params.search.algolia]
+      index = ""
+      appID = ""
+      searchKey = ""
+    [params.search.fuse]
+      # https://fusejs.io/api/options.html
+      isCaseSensitive = false
+      minMatchCharLength = 2
+      findAllMatches = false
+      location = 0
+      threshold = 0.3
+      distance = 100
+      ignoreLocation = false
+    [params.search.pagefind]
+      # Pagefind base path (run "npx pagefind --site public" after hugo build)
+      basePath = "/_pagefind/"
+
+  # Home page config
+  [params.home]
+    # amount of RSS pages
+    rss = 10
+    # Home page profile
+    [params.home.profile]
+      enable = true
+      # Gravatar Email for preferred avatar in home page
+      gravatarEmail = ""
+      # URL of avatar shown in home page
+      # avatarURL = "/images/NOAF_logo.png"
+      # title shown in home page (HTML format is supported)
+      title = ""
+      # subtitle shown in home page (HTML format is supported)
+      subtitle = "Welcome to Nerds of a Feather!"
+      # whether to use typeit animation for subtitle
+      typeit = true
+      social = true
+      # disclaimer (HTML format is supported)
+      disclaimer = ""
+    # Home page posts
+    [params.home.posts]
+      enable = true
+      # special amount of posts in each home posts page
+      paginate = 6
+
+  # Page global config
+  [params.page]
+    # whether to hide a page from home page
+    hiddenFromHomePage = false
+    # whether to hide a page from search results
+    hiddenFromSearch = false
+    # whether to enable twemoji
+    twemoji = false
+    # whether to enable lightgallery
+    lightgallery = false
+    # whether to enable the ruby extended syntax
+    ruby = true
+    # whether to enable the fraction extended syntax
+    fraction = true
+    # whether to enable the fontawesome extended syntax
+    fontawesome = true
+    # whether to show link to Raw Markdown content of the content
+    linkToMarkdown = true
+    # whether to show the full text content in RSS
+    rssFullText = false
+    # Table of the contents config
+    [params.page.toc]
+      # whether to enable the table of the contents
+      enable = true
+      # whether to keep the static table of the contents in front of the post
+      keepStatic = false
+      # whether to make the table of the contents in the sidebar automatically collapsed
+      auto = true
+    # Code config
+    [params.page.code]
+      # whether to show the copy button of the code block
+      copy = true
+      # the maximum number of lines of displayed code by default
+      maxShownLines = 50
+      [params.page.code.render]
+        goat = true
+        mermaid = true
+    # KaTeX mathematical formulas config (KaTeX https://katex.org/)
+    [params.page.math]
+      enable = false
+      # default inline delimiter is $ ... $ and \( ... \)
+      inlineLeftDelimiter = ""
+      inlineRightDelimiter = ""
+      # default block delimiter is $$ ... $$, \[ ... \], \begin{equation} ... \end{equation} and some other functions
+      blockLeftDelimiter = ""
+      blockRightDelimiter = ""
+      # KaTeX extension copy_tex
+      copyTex = true
+      # KaTeX extension mhchem
+      mhchem = true
+
+    # Comment config
+    [params.page.comment]
+      enable = false
+      # Disqus comment config (https://disqus.com/)
+      [params.page.comment.disqus]
+        enable = false
+        # Disqus shortname to use Disqus in posts
+        shortname = ""
+
+  # Site verification code for Google/Bing/Yandex/Pinterest/Baidu
+  [params.verification]
+    google = ""
+    bing = ""
+    yandex = ""
+    pinterest = ""
+    baidu = ""
+
+  # Analytics config
+  [params.analytics]
+    # Google Analytics
+    [params.analytics.google]
+      id = ""
+      # whether to respect the browser’s “do not track” setting
+      respectDoNotTrack = true
+
+# Markup related configuration in Hugo
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+  # Goldmark is from Hugo 0.60 the default library used for Markdown
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      # whether to use HTML tags directly in the document
+      unsafe = true
+  # Table Of Contents settings
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
+
+# Sitemap config
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# Permalinks config (https://gohugo.io/content-management/urls/#permalinks)
+[permalinks]
+  # posts = ":year/:month/:contentbasename"
+  posts = ":contentbasename"
+
+# Privacy config (https://gohugo.io/configuration/privacy/)
+[privacy]
+  # privacy of the Google Analytics (can also be configured in params.analytics.google)
+  [privacy.googleAnalytics]
+    # ...
+  [privacy.twitter]
+    # ...
+  [privacy.youtube]
+    # ...
+
+# Options to make output .md files
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = ["md"]
+
+# Options to make output .md files
+[outputFormats.MarkDown]
+  mediaType = "text/plain"
+  isPlainText = true
+  isHTML = false
+
+# Options to make hugo output files
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "MarkDown"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
