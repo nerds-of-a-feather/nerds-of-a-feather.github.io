@@ -124,6 +124,8 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     author = true
     # site creation time
     since = 2026
+    # CC-BY-SA license
+    license = '<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> &nbsp;|&nbsp; <span>No AI training permitted</span>'
 
   # Section (all posts) page config
   [params.section]
