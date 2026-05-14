@@ -29,9 +29,6 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [services.googleAnalytics]
     id = 'G-NQDNJNYFFC'
 
-[params]
-  contactFormAction = "https://formspree.io/f/xlgzkwvb"
-
 # Pagination config
 [pagination]
   disableAliases = false
@@ -72,7 +69,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     identifier = "contact"
     name = "Reach Out"
     url = "/contact/"
+
 [params]
+  contactFormAction = "https://formspree.io/f/xlgzkwvb"
   # site default theme ["auto", "light", "dark"]
   defaultTheme = "light"
   fingerprint = ""
