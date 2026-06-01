@@ -1,5 +1,5 @@
 ---
-date: '2026-04-28T13:53:32-07:00'
+date: '2026-06-01T13:10:16-07:00'
 draft: false
 title: 'An Act of Optimism'
 description: ''
@@ -31,7 +31,7 @@ Finally, I wanted to work on a project with my sister, Anagha, who is an artist 
 
 Ok, great! Now that I’ve gotten some justification out the way, what is this blog actually going to be about? Am I just going to pontificate about myself, my opinions, and the good old pre-AI days? Well, mostly yes. I am a scientist, so I will often write about science. However, I am also a regular human being, like all scientists (even those who think otherwise). So I will just as often write about other things that interest me: books and articles that I’m reading (both fiction and non-fiction), movies and/or TV shows I’m watching, events in my life and how they made me feel (i.e. rants), current events (although I really, really want to avoid politics as much as possible these days), life in academia, and an eclectic mix of other random topics.
 
-This blog is intended to capture the humanity of a scientist, and the personality and experiences of one particular scientist (until such time other scientists guest-write articles for me). We hear all too often from senior scientists, and are subjected to survivor bias, and rigid, orthodox thinking about how the world of science and academia work. This blog is my way of trying to offset that, without having to deal with the censorship – both editing-wise, and paywall-wise – that comes with writing for major media outlets, like Nature News, etc.
+This blog is intended to capture the humanity of a scientist, and the personality and experiences of one particular scientist (until such time other scientists guest-write articles for me). We hear all too often from senior scientists, and are subjected to survivor bias, and rigid, orthodox thinking about how the world of science and academia works. This blog is my way of trying to offset that, without having to deal with the censorship – both editing-wise, and paywall-wise – that comes with writing for major media outlets, like Nature News, etc.
 
 I want to mention that a particular inspiration came from the comedian Josh Johnson, who is a part of the Daily Show’s team. Every week, he puts out content on YouTube for people to watch for free, and he works quite hard to fight middle-men who try to fleece people by buying out his shows and selling tickets for higher prices. In a similar vein, I wanted to put my thoughts and work out there for people to read for free (until such time that I’m broke). NOAF is my contribution to this effort.
 
