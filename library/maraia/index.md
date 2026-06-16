@@ -42,11 +42,9 @@ Chess remains an exception, though, as far as I understand. In most other domain
 
 So, what’s the solution? I don’t have one. In the real world, not everything can be wrapped up in a neat dénouement. I believe that we should use AI responsibly, and educate people about how to use it well. I want more people to be aware of the risks of AI, and that it can be wrong. I want more people to talk about it, and where its use is valid, and where it isn’t. I truly believe that an abundance of caution is the way forward, and that education is the first step towards it. We shouldn’t pretend that AI is a black box and leave it at that. We must have some understanding of what goes on under the hood. I also want people to make spaces that are AI-free, where they can solve problems without outsourcing them to computers. This blog is my attempt at making an AI-free space for myself, where I can sharpen my writing and communication skills. I hope you, dear Reader, can make some spaces of your own, too.
 
-![](MarAIa_collage.jpg)
+![](MarAIa_collage.png)
 
 In The Sound of Music, Maria is seen as a problem that must be “solved” by the other nuns. And perhaps my long rant has made it seem that I am somehow suggesting that AI, too, is a similar problem that we need to wash our hands off of. That is not my position at all. I believe that technology, especially such powerful technology, must be created, and must be democratized. I only qualify this view with another – that it’s our collective responsibility to be mindful and considerate when developing and deploying one’s creations into the world. I’m not always optimistic that we can do this, but it is possible so long as we do it together.
-
-<br> <br>
 
 [^1]: If you want to know more, here’s the [link](https://doi.org/10.1113/JP284373) to the peer-reviewed publication detailing the exact work that I did.
 [^2]: A journal club is an informal gathering of scientists to discuss research that has been published in journals. Graduate students are expected to actively participate in them as an essential aspect of their training.
