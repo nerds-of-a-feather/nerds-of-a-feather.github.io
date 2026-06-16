@@ -48,6 +48,6 @@ In The Sound of Music, Maria is seen as a problem that must be “solved” by t
 
 [^1]: If you want to know more, here’s the [link](https://doi.org/10.1113/JP284373) to the peer-reviewed publication detailing the exact work that I did.
 [^2]: A journal club is an informal gathering of scientists to discuss research that has been published in journals. Graduate students are expected to actively participate in them as an essential aspect of their training.
-[^3]: There are plenty of online resources to learn more about the basics of artificial intelligence, but here’s an excellent starting point, from IBM: https://www.ibm.com/think/topics/artificial-intelligence
+[^3]: There are plenty of online resources to learn more about the basics of artificial intelligence, but [here](https://www.ibm.com/think/topics/artificial-intelligence) is an excellent starting point, from IBM.
 [^4]: AI companies have recognized this problem and are making strides towards overcoming it. It it still a problem, though, as of the writing and publishing of this article.
 
