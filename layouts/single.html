@@ -5,7 +5,7 @@
     <div class="page single special">
         {{- /* Title */ -}}
         <h1 class="single-title animate__animated animate__pulse animate__faster">
-            {{- .Title -}}
+            {{- .Title | markdownify -}}
         </h1>
 
         {{- /* Subtitle */ -}}
