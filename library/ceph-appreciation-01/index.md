@@ -1,7 +1,7 @@
 # Cephalopod Appreciation Post #1: Head-foot
 
 
-As a scientist who is working on cephalopods, I couldn’t help but have a cephalopod appreciation post as one of the first few entries of my blog. Cephalopods – often shortened to ceph(s) – include the soft-bodied (coleoid) squids, octopuses, and cuttlefish, as well as the shelled (nautiloid) nautiluses and argonauts. These are fascinating and weird creatures, starting right from their name: the “cephalo” part means ‘head’ and the “pod” part means ‘foot’, so the word ‘cephalopod’ is just a fancy way of saying ‘head-foot’, which is rather apt because every cephalopod is basically just a head with 8 legs (which scientists call ‘arms’) and no torso.
+As a scientist who is working on cephalopods, I couldn’t help but have a cephalopod appreciation post as one of the first few entries of my blog. Cephalopods – often shortened to ceph(s) – include the soft-bodied (coleoid) squids, octopuses, and cuttlefish, as well as the shelled (nautiloid) nautilus. These are fascinating and weird creatures, starting right from their name: the “cephalo” part means ‘head’ and the “pod” part means ‘foot’, so the word ‘cephalopod’ is just a fancy way of saying ‘head-foot’, which is rather apt because every cephalopod is basically just a head with 8 legs (which scientists call ‘arms’) and no torso.
 
 >General ‘No’ledge #1: The arms are **not** the same as tentacles. Octopuses only have eight appendages, all of which are ‘arms’. Squids and cuttlefish, on the other hand, have ten appendages – eight ‘arms’ and two ‘tentacles’ – which is why they get sub-classified as “decapods”. The tentacles are hidden, and they come out only when the animal is hunting, as seen below.
 
