@@ -15,6 +15,9 @@ $text-primary:  #212529;
 $text-contrast: #161209;
 $text-subtle:   #a9a9b3;
 
+// Text (Blockquotes)
+$text-blockquotes: #247BA0;
+$text-blockquotes-bold: #1A5974;
 // Links
 $link-color:       #B12B2B;
 $link-color-hover: darken(#B12B2B, 15%);
@@ -210,7 +213,8 @@ h1, h2, h3, h4, h5, h6,
     background: transparent !important;
     background-color: transparent !important;
     font-style: italic;
-    color: darken($text-subtle, 25%);
+    //color: darken($text-subtle, 25%);
+    color: $text-blockquotes;
 
     p {
         margin: 0;
@@ -225,8 +229,8 @@ h1, h2, h3, h4, h5, h6,
         color: $text-subtle;
     }
 
-    strong {
-	color: #01110A;
+    b, strong {
+	color: $text-blockquotes-bold;
     }
 }
 
