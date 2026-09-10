@@ -18,6 +18,7 @@ $text-subtle:   #a9a9b3;
 // Text (Blockquotes)
 $text-blockquotes: #247BA0;
 $text-blockquotes-bold: #1A5974;
+
 // Links
 $link-color:       #B12B2B;
 $link-color-hover: darken(#B12B2B, 15%);
@@ -190,6 +191,19 @@ h1, h2, h3, h4, h5, h6,
 .content td {
     font-family: $font-body !important;
 }
+
+// Strong, bold content needs to stay black.
+[theme=dark] .single .content b,
+[theme=dark] .single .content strong,
+[theme=light] .single .content b,
+[theme=light] .single .content strong,
+.single .content b,
+.single .content strong,
+.content b,
+.content strong{
+     color: $text-contrast !important;
+}
+
 
 @media (min-width: 768px) {
     .content p {
