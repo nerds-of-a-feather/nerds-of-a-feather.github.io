@@ -1,9 +1,9 @@
 ---
 date: '2026-09-07T18:59:30-07:00'
 draft: false
-title: 'BTdubs, this one’s about the BdubT (BWT – Burrows-Wheeler Transform)'
+title: 'BTW, a post about the BWT (Burrows-Wheeler Transform)'
 description: ''
-tags: ["bwt", "burrows", "wheeler", "transform", "bioinformatics", "sequence alignment"]
+tags: ["bwt", "bioinformatics", "sequence alignment", "animations"]
 categories: ["science", "biology", "computer science", "algorithms", "bioinformatics", "outreach"]
 author: ''
 ---
@@ -17,7 +17,6 @@ Only much later, when I was taught an alignment algorithm, did I have my first �
 [^1]: This stands for Basic Local Alignment Search Tool and is hosted by the NIH’s National Center for Biotechnology Information (NCBI). It is a workhorse of biology even today, 35 years after it was first published (1990).
 
 ### The Burrows-Wheeler Transform (BWT)
-
 The BWT is one of those concepts that is poorly taught to biologists. It is an advanced, graduate level topic that I only learned about a few years ago. The BWT procedure is really simple, but its properties and utility can be non-intuitive. When I first encountered it, it certainly seemed both abstract and abstruse. But it doesn’t have to be. Through this post, I hope to fix that. Trust me, dear Reader, there will be a payoff if you stick with me. I hope to give you an ‘aha!’ (or even ‘whoa!’) moment of your own, especially if you’re a non-computer scientist trying to learn about this for the first time.
 
 #### Part One: Definition
@@ -83,7 +82,7 @@ While it looks like we’re done, we’re not – just because _we_ know the wor
 
 ![Inverse BWT](07_Inverse_BWT_in_Action.gif)
 
-Seeing this come alive for the first time and click in my head was pretty exciting for me, and I hope it’s been the same for you.
+Seeing this come alive for the first time and click in my head was pretty exciting for me.
 
 For those of you with a more computer science-y background, you might also be excited by the fact that this inverse algorithm has a complexity of O(n), i.e. a _linear_ complexity, whereas anything to do with sorting typically involves at least an O(n*log n) complexity, if not worse. If this sentence didn’t make sense to you, don’t worry – it just means that this is a very efficient algorithm, and it’s even better than the traditionally taught “append-and-sort” algorithm.
 
@@ -155,22 +154,25 @@ Ok, that’s as much as I’ll wax poetic or philosophical about this mathemagic
 The main part of my spiel is done – I wanted to explain what went on under the hood of the BWT and some genome/transcriptome aligners (e.g., bwa, bowtie2, …) that you might come across if you work in the life sciences. This topic is a large iceberg and we’ve only seen what’s above the water’s surface. So where do you go from here?
 
 1. **FM indexing**: While walking through the alignment with BWT, I glossed over one part. The sequence we were looking at was small enough that we could tell how many A’s and T’s we’ve seen so far in the BWT just by looking at it. Genomes, though, are millions of bases long, and it’s not trivial to keep track of how many of each letter you have seen so far. An index, in computer science, is a number that keeps track of an item’s position in a list of entries – like letters in a words, for example. A special index called the “FM index” is needed to navigate large BWTs quickly and efficiently.
+<br>
 2. **Suffix arrays**: If you’re convinced about the utility of the BWT, but are still unconvinced that it’s useful in practice because the whole process of taking all the rotations and sorting matrices seems cumbersome and not scalable, rest assured that you’re not alone. And you’re right. The BWT would only be useful if it could be computed fast. Enter “suffix arrays”. This is a powerful concept and data structure, but it is also one that’s not easy to wrap your head around. At least, not for me. I want to say that I kinda sorta understand it, but definitely not well enough to be able to explain it simply (yet). Perhaps when I have my “aha” moment with suffix arrays, I’ll write about it. Or if you think you could help me have my “aha” moment, please write to me.
+<br>
 3. **Imperfect matches**: Sequencing isn’t perfect. Even the most modern, cutting-edge, long-read sequencing methods can produce erroneous or low-confidence sequences sometimes. These errors could be in the reference genome, or in the query sequence, and aligners need to be able to handle them to account for uncertainty. This is a separate topic by itself, and I might write about it when I put together a piece about the “Smith Waterman” algorithm. You can check out the documentation of tools like bwa, bowtie2, etc., to find out how they deal with this, of course, although I’d be flattered if you’d rather wait for my exposé instead.
+<br>
 4. Finally, a note on some resources that helped me wrap my head around the BWT. I first encountered the BWT in [this lecture](https://ocw.mit.edu/courses/7-91j-foundations-of-computational-and-systems-biology-spring-2014/resources/lecture-5-library-complexity-and-short-read-alignment-mapping/) from MIT Open Courseware (OCW). OCW has been formative to my (self-)education since my school days, and I highly recommend its resources. Another invaluable resource is the [YouTube channel of Ben Langmead](https://www.youtube.com/BenLangmead), a professor at Johns Hopkins whose lab develops a lot of tools for DNA sequence analysis. His explanations are excellent, especially the ones I’ve watched about the BWT like [this one](https://www.youtube.com/watch?v=4n7NPk5lwbI), although the material he covers is advanced, so I’m not sure it’s where you should start if you’re not comfortable in math and computer science. That’s the only point where I think both these resources, while useful, still fall short. But it’s probably because their intended target audience is more specialised. Oh, well. They’re great resources, in any case.
-
+<br>
 #### Part Seven: Some fine points
 In the Harry Potter universe, seven is a powerful number. So, since we’re talking about powerful magic, it feels fitting to have seven parts in this article. This final part is going to try and address some minor things that may have come across your mind and might bother you. They’re some Frequently Unanswered Questions – FUQs, if you will.
 
-*Q1: We use the $ as a marker for the end of the input string. But what if the input string has a $ in it?*
-
+*Q1: We use the $ as a marker for the end of the input string. But what if the input string has a $ in it?*<br>
 *Ans:* In things like DNA sequences, a “$” works perfectly, but in English, it may not. The “$” is called a sentinel marker in technical terms, and it’s simply any unique character that is not found anywhere in your input. So it could have been a “^” or anything else. We just use “$” because it’s usually distinct enough and easy to write out on paper. ASCII – the standard character set used by computers – has a special character called “EOF” (or End of File) which can be used instead of the “$” and which is guaranteed to not appear anywhere in English text. So yeah, the BWT works even if you have a “$” in the input – you just have to find another character to represent the end of the input, and make sure your computer program knows that it shouldn’t be interpreting the “$” as the end of the input.
 
-*Q2: Are upper-case and lower-case letters the same?*
-
+*Q2: Are upper-case and lower-case letters the same?*<br>
 *Ans:* No. Upper-case and lower-case letters are treated as distinct characters. And just like in regular English, ASCII assigns greater priority to upper-case letters than lower-case letters. In other words, “B” comes before “a”.
 
-*Q3: How do I order punctuation marks? I wasn’t taught that in school.*
-
+*Q3: How do I order punctuation marks? I wasn’t taught that in school.*<br>
 *Ans:* I’m sorry you missed that lesson, but everyone knows that punctuation has the order – full stop, comma, exclamation point, question mark, and colon. Ok. I’m only kidding. There is no universal order to punctuation, so we just have to pick one and stick with it. Luckily, ASCII has the answer, again. ASCII assigns numbers to each character, which in turn determines its order. You can check this out on the [Wikipedia page](https://en.wikipedia.org/wiki/ASCII#Printable_character_table). Roughly, it goes ! → # → $ → , → .
 I also urge you to try inputs with punctuation in the [interactive sandbox](https://sandbox.bio/concepts/bwt) and see what the resulting BWT matrix looks like. Try something with an exclamation mark or hashtag in it. What happens to the BWT matrix? Do you think the inverse BWT algorithm will be affected?
+
+*Q4: Does the BWT work only for English?*<br>
+*Ans:* No. As we saw before, the BWT can be used for any alphabet, even one as small as binary. So, it could also be used for Hindi, Russian, Chinese, etc. The only condition is that you need to be able to order characters in some way. Computer science has largely solved this problem – standard character sets like ASCII and Unicode represent characters using numbers, so converting text in a language to Unicode immediately makes it amenable to the BWT. Note, however, that the gains in compression by applying the BWT are language-specific, and so the BWT may not be the best choice to reduce the complexity of text in your language of choice. That’s the only real limitation to be mindful of.
