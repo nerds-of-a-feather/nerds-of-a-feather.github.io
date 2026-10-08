@@ -15,14 +15,14 @@ The BWT is one of those concepts that is poorly taught to biologists. It is an a
 #### Part One: Definition
 The first ingredient we will need is a word that can be used as an input to the BWT. Biologists might typically care about words that are made out of the 4-letter alphabet of DNA – A, C, G, and T. But that’s a bit challenging to start off with because our human eyes aren’t used to seeing these words. I promise you we’ll get there, but we need a more regular word to start off with. I just gave a talk about the BWT at a public science outreach event called [Nerd Nite](https://sandiego.nerdnite.com/) yesterday, so I know just the word to choose. So, here’s how you take the BWT of the word “NERDNITE”:
 
-![Computing the BWT](01_BWT_Definition.gif)
+{{< animvideo src="01_BWT_Definition.mp4" >}}
 
 And there you have it. The Burrows-Wheeler transform of the word “NERDNITE” is “ERTNN$DEI”. That’s it. Done.
 
 #### Part Two: The magical properties of the BWT
 That was really simple, though a bit disorienting. But surely I’m joking about this being useful. I mean, come on – converting “NERDNITE” to “ERTNN$DEI” seems like a complete waste – I’ve just scrambled the letters, and stuck in a dollar sign, too, for good measure (such a typical capitalistic world view, thinking that dollars will fix all problems!!). But before we dismiss this as a waste of time, let’s look at some examples and build some intuition about what the BWT might be doing. So here are some words (in purple) and their corresponding transformed versions (in black).
 
-![Some examples of BWT](02_BWT_Examples.gif)
+{{< animvideo src="02_BWT_Examples.mp4" >}}
 
 Stare at this for some time, and you might notice that the transformed versions tend to have more groupings of the same letters. It’s easiest to spot in the first example – “ABABABAB$” has no consecutive letters that are repeated; its BWT “BBBB$AAAA”, however, has all the Bs and As grouped together. This was, of course, an extreme example, but even for regular words like “BANANA” and “ABRACADABRA”, the BWT has letters grouped together that weren’t consecutive in the original word.
 
@@ -32,7 +32,7 @@ So, the first bit of magic behind the BWT is that **it groups together similar c
 
 Now, say I add an extra N to turn “BANANA” into “BANNANA”, here’s what happens to its BWT:
 
-![BANANA vs. BANNANA](03_Banana_vs_Bannana_BWT.gif)
+{{< animvideo src="03_Banana_vs_Bannana_BWT.mp4" >}}
 
 The difference may not look like much, but it packs a lot of useful information. Note that the three N’s in “BANNANA” are **not** similar anymore – two are followed by As, but the third is followed by an N. What’s more, by adding this extra N, I have also changed the context of some of the other letters, like A. None of the A’s in the word are similar anymore – the first is followed by “NN”, the second by “NA”, and the third is the last one. Both these aspects are reflected in the resulting BWT – “ANNB$ANA”.
 
@@ -42,13 +42,13 @@ Hold on a second, though – why did I look at only the next letter to define th
 
 There’s one more bit of BWT magic left to unpack. For this, let’s leave the overused classic example behind and go back to the word “NERDNITE”. Let’s repeat the BWT process on it. Only, this time around, I’ll be keeping track of repeated letters, so I’ll mark the two N’s as N<sub>1</sub> and N<sub>2</sub>, and the two E’s as E<sub>1</sub> and E<sub>2</sub>. To make sure that they stand out, I’ll also colour them differently. The number and colour will not be considered during the BWT process, though. The transform will be done exactly as it was done before. I’ll stop once I get the BWT matrix, though, and blur out everything except its <b><i>L</b></i>ast column (the BWT itself) and <b><i>F</b></i>irst column. Watch this:
 
-![BWT with rank order tracked](04_LF_Mapping.gif)
+{{< animvideo src="04_LF_Mapping.mp4" >}}
 
 Observe the order in which the E’s appear in the first column (**_F_**): <span style="color: #B12B2B">E<sub>2</sub></span> comes before E<sub>1</sub>. Now check out the order in which the E’s appear in the last column (**_L_**) – a.k.a. the BWT. The first E is <span style="color: #B12B2B">E<sub>2</sub></span> and the second one is E<sub>1</sub>. It’s the same for the N’s: N<sub>1</sub> comes before <span style="color: #B12B2B">N<sub>2</sub></span> in both _F_ and in _L_. This is the fourth piece of magic of the BWT – **for every character, the order of appearance in the last column of the BWT matrix is the same as the order of appearance in the first column of the BWT matrix**. This property has a special name – _“LF mapping”_. This is one of those non-intuitive features of the BWT. I mean, would you have guessed that this would be true when you first saw the BWT matrix? I certainly didn’t.
 
 I want to also highlight another, more obvious, connection between _F_ and _L_: entries in _F_ are preceded by the corresponding entries in _L_ (i.e. the BWT) in the original word. Why? Because each row of the BWT matrix is made by taking the first letter and putting it at the end, and the order of letters within a row was never changed during the BWT. An animation is worth a million words:
 
-![F and L represent consecutive letters](05_LF_Transposition.gif)
+{{< animvideo src="05_LF_Transposition.mp4" >}}
 
 I hope that you’re with me so far. I’m going to have to assume that you are, but I’d highly recommend that you re-read this text and stare at these animations for as long as you need to convince yourself about these properties before proceeding. If you want to try doing some independent exploration, I’d recommend [this interactive tool](https://sandbox.bio/concepts/bwt) that allows you to compute the BWT for any input up to 50 letters. The only condition to go use it is that you come back for the rest, because I haven’t yet gotten to the exciting parts and s*** is only about to get real.
 
@@ -63,7 +63,7 @@ Let’s say that we were given a BWT of unknown origin, but that we got both the
 
 [^4]: This is for illustrative purposes and is not a necessary step in the final version of the algorithm.
 
-![LF_Mapping_for_inverse_BWT](06_LF_Mapping_for_inverse_BWT.gif)
+{{< animvideo src="06_LF_Mapping_for_inverse_BWT.mp4" >}}
 
 Ok, but now what? Well, let’s start at the top – the only thing we know for certain is that “$” marks the end of the word, so let’s lay that out, and then work our way backwards. How? We know that the entries in the black column precede the entries in the blue column – the _LF transposition_ property. This means that the last letter in the word is E.
 
@@ -73,7 +73,7 @@ For that, let’s go back to the blue column again. Which E should we look at? W
 
 While it looks like we’re done, we’re not – just because _we_ know the word “NERDNITE” makes sense, we can’t stop. We need to look at what comes before N. When we look at the first blue N, its corresponding black entry is the “$”. Aha! Now we’re back full-circle, so we know that we’ve gone through the whole word. And voilà, we have reconstructed the original word from the BWT.
 
-![Inverse BWT](07_Inverse_BWT_in_Action.gif)
+{{< animvideo src="07_Inverse_BWT_in_Action.mp4" >}}
 
 Seeing this come alive for the first time and click in my head was pretty exciting for me.
 
@@ -83,7 +83,7 @@ At this point, you might be wondering – this algorithm assumed that we had _bo
 
 Ah – so then we _do_ need a sorting algorithm, after all. Nope! The brilliance is that you can get _F_ without having to run a sorting algorithm, since we know that letters in _F_ must be (by definition) in alphabetical order. So we only need to count the number of occurrences of each letter of the alphabet in the BWT we’re given, and then stitch them together to get _F_. This is how we got _F_ for our “ERTNN$DEI” example.
 
-![Getting F from L](08_First_column_from_BWT.gif)
+{{< animvideo src="08_First_column_from_BWT.mp4" >}}
 
 Here’s another example. Say we got the BWT “C$TATCAAATA”, which has 2 C’s, 5 A’s, and 3 T’s, we immediately know that _F_ is going to be “$AAAAACCTTT”. So you can build the first column of the BWT matrix at a negligible price. Computationally, counting characters also just takes O(n) time, so the whole algorithm of inverting the BWT can be done in O(n) time. Challenge: can you finish off the inversion and tell me what the original word was? Write to me with your answers. I’d love to hear from you to know that you made it this far. :)
 
@@ -96,7 +96,7 @@ The first reason that storing the BWT is useful is that it is actually easier to
 
 Let’s take another example. Up to this point, we’ve only looked at individual words. But the fact is that the BWT can be applied to longer texts, too. After all, spaces, punctuation, and numbers are all just characters. So, you can take a sentence like “It was the best of times it was the worst of times” and get its BWT, like so:
 
-![BWT of more complicated text, like sentences](09_Sentence_BWT.gif)
+{{< animvideo src="09_Sentence_BWT.mp4" >}}
 
 If you were to store the original sentence, you would need 50 bytes of space. But if you get its BWT and store it by keeping count of characters, you could get down to 44 bytes. You might not think it is all that much, but the bigger the input gets, and the more common words/phrases there are (e.g., “the”, “was”, “of”, …), the greater the gains of storing the BWT instead.
 
@@ -104,22 +104,22 @@ In other words, the BWT is useful for _compression_. Technically speaking, it is
 
 But wait, does bzip2 only work on Word documents or something? Would it still work if I had to compress images or videos? Surely the BWT can’t handle _that_! It absolutely can. All computer files are just words in binary, a 2-letter alphabet of 0 and 1. So, although until now we’ve been using English words, the BWT can be applied to anything that has an alphabet, even if it is binary.
 
-![BWT of more complicated text, like sentences](10_Binary_BWT.gif)
+{{< animvideo src="10_Binary_BWT.mp4" >}}
 
 In the world of DNA, the alphabet has 4 letters – A, C, G, and T (which represent the bases Adenine, Cytosine, Guanine, and Thymine, respectively) – and an example DNA sequence and its Burrows-Wheeler Transform is shown below. To our eyes, the two might look nearly identical. But if you look carefully, you can see that BWT has worked when you count how many runs of consecutive characters there are between the original and transformed versions.
 
-![BWT of more complicated text, like sentences](11_DNA_BWT.gif)
+{{< animvideo src="11_DNA_BWT.mp4" >}}
 
 #### Part Five: Where’s the alignment?
 So far, I have been singing praises of the BWT without really getting into the reason we started talking about it in the first place – DNA sequence alignment. But this four-part explanation with fruits, magic spells, and SciComm events has been building up to this. Now we’re ready to do some alignment, so let’s do some alignment!!
 
 We first need a reference sequence. Here is one, along with its BWT.
 
-![Reference sequence and its BWT](12_RefSeq_and_BWT.gif)
+{{< animvideo src="12_RefSeq_and_BWT.mp4" >}}
 
 We also need a query – something we’re looking for within the reference sequence. Let’s say we want to find all the ATG’s in the reference sequence. Here’s the traditional, intuitive way of finding them. I’m sure this is exactly what you did when you scanned the reference sequence by eye. Nevertheless, let’s do it step-by-step, also keeping count of how many steps we took (red numbers).
 
-![](13_Standard_Alignment.gif)
+{{< animvideo src="13_Standard_Alignment.mp4" >}}
 
 First, you put the query (ATG) against the first three letters. Since they don’t match, you move on to the next three letters. Aha – they match. Keep going, and you don’t find any match for the next four comparisons. But then, at the 7th comparison, there you go – another match. So you keep doing this until you spill over the end of the reference sequence, and you have now successfully found that there were 2 ATG’s in the reference sequence. Super. That was easy.
 
@@ -131,7 +131,7 @@ The question we’re asking when aligning, then, is – which of these G’s is 
 
 Indeed, looking at the BWT entries corresponding to these T’s, it seems that both the T’s were preceded by an A. These A’s are the second and third A’s in the BWT, so they must be the second and third in _F_. Since that’s all we had to look for, we’re now done! And since the interval we ended up with has two entries, we know that there are 2 instances of ATG in the reference – one that was preceded by a T and another that was preceded by an A.
 
-![](14_BWT_Alignment.gif)
+{{< animvideo src="14_BWT_Alignment.mp4" >}}
 
 The text explanation walking through the logic might have seemed long, but the idea is simple – you keep narrowing your search by filtering out all the entries in the first column (_F_) that had irrelevant entries in the corresponding last column (_BWT_). And since the entries in the BWT matrix are sorted alphabetically, we know that all the “TG…”s or “AT…”s in the reference will be close to each other in the BWT, and we can be sure we’re not missing anything.
 
